@@ -10,6 +10,12 @@ spring:
       settings:
         web-allow-others: true  # 외부접속 허용
       path: /h2-console  # localhost:port/path 로 접속한다.
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:testdb
+#    username: sa
+#    password: 1234
+
 
 eureka:
   instance:
