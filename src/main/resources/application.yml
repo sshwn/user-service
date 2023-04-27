@@ -32,3 +32,7 @@ greeting:
 logging:
   level:
     com.example.userservice: DEBUG
+
+token:
+  expiration_time: 86400000 #60초 x 60분 x 24시 x 1000 => 하루짜리토큰
+  secret: user_token #토큰을 생성할때 어떤 키를 이용할지 (임의의 값) 특수한 토큰 만들때 사용됨.
