@@ -4,6 +4,11 @@ server:
 spring:
   application:
     name: user-service
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
   h2:
     console:
       enabled: true
@@ -37,7 +42,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: refresh, health, beans # MSA있는 config에서 가지고 올 데이터를 refresh 하겠다는 뜻
+        include: refresh, health, beans, busrefresh # MSA있는 config에서 가지고 올 데이터를 refresh 하겠다는 뜻
 
 #token:
 #  expiration_time: 86400000 #60초 x 60분 x 24시 x 1000 => 하루짜리토큰
