@@ -33,6 +33,13 @@ logging:
   level:
     com.example.userservice: DEBUG
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh, health, beans # MSA있는 config에서 가지고 올 데이터를 refresh 하겠다는 뜻
+
 #token:
 #  expiration_time: 86400000 #60초 x 60분 x 24시 x 1000 => 하루짜리토큰
 #  secret: user_token #토큰을 생성할때 어떤 키를 이용할지 (임의의 값) 특수한 토큰 만들때 사용됨.
+

@@ -33,6 +33,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {  // 권한
         http.csrf().disable();
 //        http.authorizeRequests().antMatchers("/users/**").permitAll();  // /users/** 로 호출되는 uri 값은 통과한다는 의미
+        http.authorizeRequests().antMatchers("/actuator/**").permitAll();
         http.authorizeRequests().antMatchers("/**")// 인증이 된 상태에서만 추가적으로 사용자 목록, 주문내역 확인 등등 가능하도록 처리
                 .hasIpAddress("192.168.0.6")
                 .and()
